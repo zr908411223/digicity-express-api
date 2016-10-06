@@ -5,6 +5,8 @@ import PostList from './components/ui/PostList.js';
 import App from './components/ui/App.js';
 
 import NewPost from './components/ui/NewPost.js';
+import ShowPost from './components/ui/ShowPost.js';
+
 
 class Routes extends React.Component {
   render () {
@@ -13,6 +15,7 @@ class Routes extends React.Component {
         <Route path = '/' component={ App }>
           <IndexRoute component = { PostList } />
           <Route path='/write' component={ NewPost } />
+          <Route path='/post/:id' component={ ShowPost } />
         </Route>
       </Router>
     )

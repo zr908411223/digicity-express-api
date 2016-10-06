@@ -17,7 +17,7 @@ export default class PostList extends Component {
       content: {
         position: 'relative',
         width: '100%',
-        height: '60px',
+        height: '90px',
         maxWidth: '600px',
         margin: '20px auto',
         backgroundColor: '#fff',
@@ -38,7 +38,20 @@ export default class PostList extends Component {
         lineHeight:'2em',
         borderRadius:'10px',
         textAlign:'center',
-        margin:'10px auto'
+        margin:'20px auto'
+      },
+      ButtonIns:{
+        color:'#fff',
+        display:'block',
+        position:'absolute',
+        width:'5em',
+        height:'2em',
+        backgroundColor:'#00bcd4',
+        textDecoration:'none',
+        lineHeight:'2em',
+        borderRadius:'10px',
+        textAlign:'center',
+        right:'20px'
       }
     }
   }
@@ -58,6 +71,7 @@ export default class PostList extends Component {
       return (
         <div style={styles.content} key={post._id}>
           <div style={styles.title}>{post.classify}<br />{post.title}<br />{post.createdAt}</div>
+          <Link to={`/post/${post._id}`} style={styles.ButtonIns}>查看内容</Link>
         </div>
       )
     }, this.state.posts);
